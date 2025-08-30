@@ -3,7 +3,8 @@ import { ref, computed, watchEffect, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import CreateNewTaskModal from '@/components/modals/CreateNewTaskModal.vue';
 import { VueAwesomePaginate } from 'vue-awesome-paginate';
-import { TTask } from '../../types/task';
+import { TCurrentTask, TTask } from '../../types/task';
+import { TStatus } from '../../types/status';
 import { useToast } from 'vue-toast-notification';
 
 const store = useStore();
@@ -21,7 +22,7 @@ const statuses = computed(() => store.getters['task/getStatuses']);
 const users = computed(() => store.getters['user/allUsers']);
 const today = new Date().toISOString().split("T")[0];
 
-const currentTask = ref({
+const currentTask = ref<TCurrentTask>({
   id: null,
   title: '',
   description: '',
@@ -168,7 +169,7 @@ const handleRemoveTask = async (task: TTask) => {
           <p class="text-sm text-gray-500">Due: {{ task.due_date }}</p>
           <p class="text-sm text-gray-500">Assigned User: {{ task.assigned_user.name }}</p>
           <p class="text-sm text-gray-500">
-            Status: {{ statuses.find((item) => item.label === task.status)?.name }}
+            Status: {{ statuses.find((item: TStatus) => item.label === task.status)?.name }}
           </p>
         </div>
 

@@ -28,7 +28,6 @@ onMounted(() => {
 
 const users = computed(() => store.getters['user/allUsers']);
 
-
 const toggle = (user) => {
   store.dispatch('user/toggleAvailability', user).then(() => {
     $toast.open({

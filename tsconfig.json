@@ -3,9 +3,19 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
     "importHelpers": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "allowSyntheticDefaultImports": true
-  }
+    "noEmit": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.vue"]
 }
