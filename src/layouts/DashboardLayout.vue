@@ -7,7 +7,7 @@
         <RouterLink to="/" class="hover:bg-gray-100 p-2 rounded">Task Board</RouterLink>
         <RouterLink to="/users" class="hover:bg-gray-100 p-2 rounded">Users</RouterLink>
       </nav>
-      <button @click="logout" class="mt-6 bg-red-500 text-white px-4 py-2 rounded w-full">
+      <button class="mt-6 bg-red-500 text-white px-4 py-2 rounded w-full" @click="logout">
         Logout
       </button>
     </aside>
@@ -20,14 +20,14 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router';
-import { useStore } from 'vuex';
-const router = useRouter();
+import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
+const router = useRouter()
 
-const store = useStore();
+const store = useStore()
 
 const logout = () => {
-  router.push('/login');
-  store.dispatch('auth/logout');
+  router.push('/login')
+  store.dispatch('auth/logout')
 }
 </script>

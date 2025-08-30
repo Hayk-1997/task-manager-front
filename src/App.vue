@@ -3,10 +3,8 @@
 <template>
   <header></header>
   <main>
-  <RouterView />
+    <RouterView />
   </main>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

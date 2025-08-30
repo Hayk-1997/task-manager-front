@@ -1,5 +1,5 @@
 export type TStatus = {
-  id: number;
-  name: string;
-  label: string;
-};
+  id: number
+  name: string
+  label: string
+}
